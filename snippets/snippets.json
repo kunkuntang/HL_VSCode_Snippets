@@ -1,0 +1,51 @@
+{
+    "Render HL Custom FormItem": {
+        "prefix": "HLRenderFormCustomConfig",
+        "body": [
+            "formUtils.renderCustomConfig({",
+            "    iAntdProps: formUtils.createAntdProps('${1:FormItemName}', ${2:FormGroupId}, '${3:FormPlaceHolder}'),",
+            "    iFormProps: {",
+            "         render: (form, antdProps, rules) => {",
+            "             return (",
+            "                <div></div>",
+            "             );",
+            "         },",
+            "    },",
+            "    rules: rules.legalName,",
+            "});"
+        ],
+        "description": "Create HLRenderFormItem Config"
+    },
+
+    "Render HL Text FormItem": {
+        "prefix": "HLRenderFormTextConfig",
+        "body": [
+            "formUtils.renderTextConfig({",
+            "    iAntdProps: formUtils.createAntdProps('${1:FormItemName}', ${2:FormGroupId}, '${3:FormPlaceHolder}'),",
+            "    iFormProps: {",
+            "         ...formUtils.createLayout('注册手机号：', 8, 2 * 8),",
+            "         autosize: { minRows: 1, maxRows: 1 },",
+            "         maxLength: '128',",
+            "    },",
+            "    rules: rules.legalName,",
+            "});"
+        ],
+        "description": "Create HLRenderFormItem Config"
+    },
+
+    "Render HL Input FormItem": {
+        "prefix": "HLRenderFormInputConfig",
+        "body": [
+            "formUtils.renderInputConfig({",
+            "    iAntdProps: formUtils.createAntdProps('${1:FormItemName}', ${2:FormGroupId}, '${3:FormPlaceHolder}'),",
+            "    iFormProps: {",
+            "         ...formUtils.createLayout('注册手机号：', 8, 2 * 8),",
+            "         autosize: { minRows: 1, maxRows: 1 },",
+            "         maxLength: '128',",
+            "    },",
+            "    rules: rules.legalName,",
+            "});"
+        ],
+        "description": "Create HLRenderFormItem Config"
+    }
+}
