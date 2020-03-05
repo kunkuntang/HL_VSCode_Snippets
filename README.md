@@ -6,6 +6,11 @@
 
 Using this extensions, you can generate all kinds of template code. Hope you like it!
 
+Installation
+Install through VS Code extensions. Search for Prettier - Code formatter
+
+[Visual Studio Code Market Place: HLSnippets](https://marketplace.visualstudio.com/items?itemName=kuntang.hlsinppts)
+
 ## Features
 
 Add some code snippets and make code more efficient.

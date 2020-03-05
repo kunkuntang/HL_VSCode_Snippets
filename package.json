@@ -10,6 +10,7 @@
   "categories": [
     "Snippets"
   ],
+  "icon": "./images/HLS-icon.png",
   "contributes": {
     "snippets": [{
       "language": "typescriptreact",
@@ -33,6 +34,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kunkuntang/HL_VSCode_Snippts"
+    "url": "https://github.com/kunkuntang/HL_VSCode_Snippets"
   }
 }
