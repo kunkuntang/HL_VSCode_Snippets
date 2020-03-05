@@ -1,10 +1,14 @@
 # HLSinppts
 
-By Using this extentions, you can generate the template components code with the sinppts. Hope you like it!
+<p align="center">
+  <img width="300" src="./images/HLS-icon.png" />
+</p>
+
+Using this extensions, you can generate all kinds of template code. Hope you like it!
 
 ## Features
 
-Add some code sinppts and make code more efficient.
+Add some code snippets and make code more efficient.
 
 ## Requirements
 

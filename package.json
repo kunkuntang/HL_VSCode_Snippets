@@ -1,11 +1,11 @@
 {
-  "name": "hlsinppts",
-  "displayName": "HLSinppts",
+  "name": "hlsnippets",
+  "displayName": "HLSnippets",
   "description": "code snippets of HL Components",
   "version": "0.0.1",
   "publisher": "kuntang",
   "engines": {
-    "vscode": "^1.42.0"
+    "vscode": "^1.34.0"
   },
   "categories": [
     "Snippets"
@@ -13,7 +13,22 @@
   "contributes": {
     "snippets": [{
       "language": "typescriptreact",
+      "path": "./snippets/HLComponentSnippets.json"
+    }, {
+      "language": "typescriptreact",
+      "path": "./snippets/HLContainerSnippets.json"
+    }, {
+      "language": "typescriptreact",
+      "path": "./snippets/HLContainerSnippets.json"
+    }, {
+      "language": "typescriptreact",
+      "path": "./snippets/HLQueryConditionSnippets.json"
+    }, {
+      "language": "typescriptreact",
       "path": "./snippets/HLFormItemSnippets.json"
+    }, {
+      "language": "typescript",
+      "path": "./snippets/HLFormFieldSnippets.json"
     }]
   },
   "repository": {

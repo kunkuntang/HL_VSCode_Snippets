@@ -1,18 +1,8 @@
 {
-  "Create HL Text FormItem": {
-    "prefix": "HLRenderFormTextConfig",
-    "body": [
-      "${1:formUtils}.renderTextConfig({",
-      "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, ''),",
-      "    iFormProps: ${1}.createLayout('${3:label}', 8, 2 * 8),",
-      "})",
-      ""
-    ],
-    "description": "Create HL Text FormItem"
-  },
+	
 
   "Create HL Input FormItem": {
-    "prefix": "HLRenderFormInputConfig",
+    "prefix": "HLFormInputConfig",
     "body": [
       "${1:formUtils}.renderInputConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -28,7 +18,7 @@
   },
 
   "Create HL NumberInput FormItem": {
-    "prefix": "HLRenderFormNumberInputConfig",
+    "prefix": "HLFormNumberInputConfig",
     "body": [
       "${1:formUtils}.renderInputConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -43,7 +33,7 @@
   },
 
   "Create HL TextArea FormItem": {
-    "prefix": "HLRenderFormTextAreaConfig",
+    "prefix": "HLFormTextAreaConfig",
     "body": [
       "${1:formUtils}.renderInputConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -59,7 +49,7 @@
   },
 
   "Create HL Radio Button FormItem": {
-    "prefix": "HLRenderRadioButtonFormConfig",
+    "prefix": "HLRadioButtonFormConfig",
     "body": [
       "${1:formUtils}.renderRadioButtonConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -82,7 +72,7 @@
   },
 
   "Create HL Switch FormItem": {
-    "prefix": "HLRenderFormSwitchConfig",
+    "prefix": "HLFormSwitchConfig",
     "body": [
       "${1:formUtils}.renderSwitchConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -99,7 +89,7 @@
   },
 
   "Create HL DatePicker FormItem": {
-    "prefix": "HLRenderFormDatePickerConfig",
+    "prefix": "HLFormDatePickerConfig",
     "body": [
       "${1:formUtils}.renderDatePickerConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -114,7 +104,7 @@
   },
 
   "Create HL Select FormItem": {
-    "prefix": "HLRenderSelectFormConfig",
+    "prefix": "HLSelectFormConfig",
     "body": [
       "${1:formUtils}.renderSelectConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -136,7 +126,7 @@
   },
 
   "Create HL Search Select FormItem": {
-    "prefix": "HLRenderSearchSelectFormConfig",
+    "prefix": "HLSearchSelectFormConfig",
     "body": [
       "${1:formUtils}.renderSelectConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -183,7 +173,7 @@
   },
 
   "Create HL Upload FormItem": {
-    "prefix": "HLRenderUploadFormConfig",
+    "prefix": "HLUploadFormConfig",
     "body": [
       "${1:formUtils}.renderUploadConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
@@ -200,7 +190,7 @@
   },
 
   "Create HL Custom FormItem": {
-    "prefix": "HLRenderCustomFormConfig",
+    "prefix": "HLCustomFormConfig",
     "body": [
       "${1:formUtils}.renderCustomConfig({",
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, ''),",
@@ -221,4 +211,5 @@
     ],
     "description": "Create HL Custom FormItem"
   }
+  
 }
