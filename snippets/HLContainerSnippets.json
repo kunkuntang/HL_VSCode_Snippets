@@ -1,6 +1,6 @@
 {
   "HL Create Page Container": {
-		"prefix": "HLPageContainer",
+		"prefix": "HLContainerPage",
 		"body": [
 			"import React from 'react';",
 			"import { observer, bind } from 'legions/store-react';",
@@ -45,7 +45,7 @@
   },
 
   "HL Create Form Config Container": {
-    "prefix": "HLFormConfigContainer",
+    "prefix": "HLContainerFormConfig",
     "body": [
       "import React from 'react';",
       "import { IGroup } from 'hoolinks-legion-design/lib/typings/components'",
@@ -84,7 +84,7 @@
   },
 
   "HL Create Table Columns Config Container": {
-    "prefix": "HLTableColumnsContainer",
+    "prefix": "HLContainerTableColumns",
     "body": [
       "import React from 'react';",
       "import { ITableColumnConfigProps } from 'hoolinks-legion-design/lib/typings/antd';",
@@ -97,22 +97,46 @@
     ],
     "description": "HL Create Table Columns Config Container"
   },
-
-  "HL Create Table Columns Item": {
-    "prefix": "HLTableColumnsItem",
+  
+  "Create HL Form Field Config Container": {
+    "prefix": "HLContainerFormField",
     "body": [
-      "{",
-      "    title: '${1:title}',",
-      "    width: 120,",
-      "    tooltip: ${2|true,false|},",
-      "    dataIndex: '${3:dataIndex}',",
-      "},"
+      "import React from 'react';",
+      "import { IGroup } from 'hoolinks-legion-design/lib/typings/components'",
+      "import { HLFormUtils } from 'hoolinks-legion-design/lib/utils/config-utils';",
+      "import { IAntdProps, IAntdRule } from 'hoolinks-legion-design/lib/typings/antd/index.d';",
+      "import { observablePromise } from 'legions/store-utils'",
+      "",
+      "export default abstract class ${1:FormName}Config<P,S = {}> extends React.Component<P,S>{",
+      "    protected instance: ${1};",
+      "    protected readonly group: IGroup[] = [{",
+      "        name: '',",
+      "        id: 1,",
+      "        active: ${2|true,false|},",
+      "        isFolding: ${3|true,false|},",
+      "        className: '',",
+      "    }]",
+      "    constructor(props: P) {",
+      "        super(props)",
+      "    }",
+      "    protected registerInstance(Instance: ${1}) {",
+      "        this.instance = Instance",
+      "    }",
+      "    protected createConfig() {",
+      "        const formUtils = new HLFormUtils();",
+      "        const rules = ${1}Rule.createFormRules<${1}Rule>(${1}Rule)",
+      "        ",
+      "        return [",
+      "            formUtils.getFormConfig(''),",
+      "        ]",
+      "    }",
+      "}"
     ],
-    "description": "HL Create Table Columns Item"
+    "description": "Create HL Form Field Config Container"
   },
 
-  "HL Create QueryConditions Config": {
-    "prefix": "HLQueryConditionsConfig",
+  "Create HL QueryConditions Config": {
+    "prefix": "HLContainerQueryConditionsConfig",
     "body": [
       "import { IQuery } from 'hoolinks-legion-design/lib/typings/components';",
       "",
@@ -154,6 +178,25 @@
     "description": "HL Create QueryConditions Config"
   },
 
+  "Create HL Store Container": {
+		"prefix": "HLContainerStore",
+		"body": [
+			"import StoreBase, { IStoreBaseMeta } from '../../common/stores/StoreBase';",
+			"import { observable, action, computed } from 'mobx';",
+			"import { observablePromise } from 'brain-store-utils';",
+			"",
+			"export default class ${1:StoreName} extends StoreBase {",
+			"    static meta: IStoreBaseMeta = {",
+			"        ...StoreBase.meta,",
+			"        className: '${1}',",
+			"        contextTypes: {},",
+			"    };",
+			"    ",
+			"    ${0}",
+			"}"
+		],
+		"description": "Create HL Store Container"
+  },
   
 	"Create HL Get Service": {
 		"prefix": "HLCreateGetService",
@@ -179,100 +222,20 @@
 			"}"
 		],
 		"description": "Create HL Post Service"
-	},
-
-	"Create HL Store Container": {
-		"prefix": "HLCreateStoreContainer",
-		"body": [
-			"import StoreBase, { IStoreBaseMeta } from '../../common/stores/StoreBase';",
-			"import { observable, action, computed } from 'mobx';",
-			"import { observablePromise } from 'brain-store-utils';",
-			"",
-			"export default class ${1:StoreName} extends StoreBase {",
-			"    static meta: IStoreBaseMeta = {",
-			"        ...StoreBase.meta,",
-			"        className: '${1}',",
-			"        contextTypes: {},",
-			"    };",
-			"    ",
-			"    ${0}",
-			"}"
-		],
-		"description": "Create HL Store Container"
   },
   
-  "Create HL Form Config Container": {
-    "prefix": "HLCreateFormConfigContainer",
+  "HL Create Table Columns Item": {
+    "prefix": "HLCreateTableColumnsItem",
     "body": [
-      "import React from 'react';",
-      "import { IGroup } from 'hoolinks-legion-design/lib/typings/components'",
-      "import { HLFormUtils } from 'hoolinks-legion-design/lib/utils/config-utils';",
-      "import { IAntdProps, IAntdRule } from 'hoolinks-legion-design/lib/typings/antd/index.d';",
-      "import { observablePromise } from 'legions/store-utils'",
-      "",
-      "export default abstract class ${1:FormName}Config<P,S = {}> extends React.Component<P,S>{",
-      "    protected instance: ${1};",
-      "    protected readonly group: IGroup[] = [{",
-      "        name: '',",
-      "        id: 1,",
-      "        active: ${2|true,false|},",
-      "        isFolding: ${3|true,false|},",
-      "        className: '',",
-      "    }]",
-      "    constructor(props: P) {",
-      "        super(props)",
-      "    }",
-      "    protected registerInstance(Instance: ${1}) {",
-      "        this.instance = Instance",
-      "    }",
-      "    protected createConfig() {",
-      "        const formUtils = new HLFormUtils();",
-      "        const rules = ${1}Rule.createFormRules<${1}Rule>(${1}Rule)",
-      "        ",
-      "        return [",
-      "            formUtils.getFormConfig(''),",
-      "        ]",
-      "    }",
-      "}"
+      "{",
+      "    title: '${1:title}',",
+      "    width: 120,",
+      "    tooltip: ${2|true,false|},",
+      "    dataIndex: '${3:dataIndex}',",
+      "},"
     ],
-    "description": "Create HL Form Config Container"
+    "description": "HL Create Table Columns Item"
   },
-
-	"Create HL FormField Container": {
-		"prefix": "HLCreateFormFieldContainer",
-		"body": [
-			"import { FormRuleProperty, createFormRule } from 'hoolinks/form-rule';",
-			"import { mapFields } from '../../../common/utils/fields';",
-			"import { BaseFormFields, IBaseFormFields } from 'hoolinks-legion-design/lib/models/BaseFormFields';",
-			"",
-			"$BLOCK_COMMENT_START 表单字段类 $BLOCK_COMMENT_END",
-			"export class ${1:FormFieldName}FormFields extends BaseFormFields {",
-			"    ${0}",
-			"    ",
-			"    constructor(form?: ${1}FormFields) {",
-			"        super()",
-			"        mapFields.call(this, form);",
-			"    }",
-			"",
-			"    static getFormFields(form: ${1}FormFields) {",
-			"        let obj = new ${1}FormFields();",
-			"        Object.keys(obj).forEach(item => {",
-			"            obj[item] = form[item];",
-			"        });",
-			"        return obj;",
-			"    }",
-			"}",
-			"",
-			"$BLOCK_COMMENT_START 表单规则类 $BLOCK_COMMENT_END",
-			"export class ${1}FormRule extends ${1}FormFields {",
-			"    constructor(form?: ${1}FormFields) {",
-			"        super(form);",
-			"        createFormRule(${1}FormFields, this);",
-			"    }",
-			"}"
-		],
-		"description": "Create HL FormField Container"
-	},
 
 	"Create HL FormField Rule": {
 		"prefix": "HLCreateFormFieldRule",
@@ -315,48 +278,5 @@
 			"}"
 		],
 		"description": "Create HL FormField Extend Rule"
-  },
-  
-  "Create HL QueryConditions Config": {
-    "prefix": "HLCreateQueryConditionsConfig",
-    "body": [
-      "import { IQuery } from 'hoolinks-legion-design/lib/typings/components';",
-      "",
-      "export const ${1:QueryConditionName}QueryConfig = (_this: ${2:instance}): Array<IQuery> => {",
-      "    return [",
-      "        {",
-      "            container: {",
-      "                width: 200,",
-      "                position: 'left',",
-      "                component: {",
-      "                    label: '订单号',",
-      "                    props: { width: 180, placeholder: '' },",
-      "                    type: 'text',",
-      "                    JsonProperty: { name: 'orderNo', queryPrams: 'orderNo' },",
-      "                    defaultValue: '',",
-      "                },",
-      "            },",
-      "        },",
-      "        {",
-      "            container: {",
-      "                position: 'right',",
-      "                component: {",
-      "                    hooks: [",
-      "                        {",
-      "                            name: 'onSearch',",
-      "                            handle: (value, viewModel) => {},",
-      "                        },",
-      "                        {",
-      "                            name: 'onReset',",
-      "                            handle: (value, viewModel) => {},",
-      "                        },",
-      "                    ],",
-      "                },",
-      "            },",
-      "        },",
-      "    ];",
-      "}"
-    ],
-    "description": "Create HL QueryConditions Config"
   }
 }

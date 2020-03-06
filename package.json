@@ -10,7 +10,7 @@
   "categories": [
     "Snippets"
   ],
-  "icon": "./images/HLS-icon.png",
+  "icon": "images/HLS-icon.png",
   "contributes": {
     "snippets": [{
       "language": "typescriptreact",
@@ -19,7 +19,7 @@
       "language": "typescriptreact",
       "path": "./snippets/HLContainerSnippets.json"
     }, {
-      "language": "typescriptreact",
+      "language": "typescript",
       "path": "./snippets/HLContainerSnippets.json"
     }, {
       "language": "typescriptreact",

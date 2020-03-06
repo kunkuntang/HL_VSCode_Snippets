@@ -27,8 +27,8 @@
 		"description": "Create HL Input FormField"
 	},
 
-	"Create HL Swtich FormField": {
-		"prefix": "HLCreateSwtichFormField",
+	"Create HL Switch FormField": {
+		"prefix": "HLCreateSwitchFormField",
 		"body": [
 			"/** ${4} */",
 			"@FormRuleProperty({",
@@ -42,7 +42,7 @@
 			"    value: ${5|false,true|},",
 			"}"
 		],
-		"description": "Create HL Swtich FormField"
+		"description": "Create HL Switch FormField"
 	},
 
 	"Create HL Number Input FormField": {
@@ -150,8 +150,8 @@
 		"description": "Create HL Upload FormField"
 	},
 
-	"Create HL Hiiden FormField": {
-		"prefix": "HLCreateHiidenFormField",
+	"Create HL Hidden FormField": {
+		"prefix": "HLCreateHiddenFormField",
 		"body": [
 			"/**",
 			" * 这是不在UI表单上显示但又需要提交到后台接口的表单字段",

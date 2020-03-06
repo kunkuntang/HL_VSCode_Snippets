@@ -1,9 +1,9 @@
 {
   "HL Create Form Component": {
-    "prefix": "HLFormComponent",
+    "prefix": "HLComponentForm",
     "body": [
       "<HLFormContainer",
-      "<${1:FormFields}>",
+      "    <${1:FormFields}>",
       "    {...this.${2:formRef}&&this.${2}.viewModel.InputDataModel}",
       "    mapPropsToFields={(props: IHLFormProps & ${1}) => {",
       "        return new ${1}(props)",
@@ -22,7 +22,7 @@
   },
 
   "HL Create Modal Component": {
-    "prefix": "HLModalComponent",
+    "prefix": "HLComponentModal",
     "body": [
       "<HLModal onReady={(instance) => {",
       "    const modalWidth = 800;",
@@ -37,7 +37,7 @@
   },
 
   "HL Create QRCoe Component": {
-    "prefix": "HLQRCoeComponent",
+    "prefix": "HLComponentQRCoe",
     "body": [
       "<HLQRCode",
       "    size={${1:128}}",
@@ -52,7 +52,7 @@
   },
 
   "HL Create Table Component": {
-    "prefix": "HLTableComponent",
+    "prefix": "HLComponentTable",
     "body": [
       "<HLTable",
       "    onReady={(instance) => {",
@@ -97,7 +97,7 @@
   },
 
   "HL Create Select Table Component": {
-    "prefix": "HLSelectTableComponent",
+    "prefix": "HLComponentSelectTable",
     "body": [
       "<HLTable",
       "    onReady={(instance) => {",
@@ -146,7 +146,7 @@
   },
 
   "HL Create QueryConditions Component": {
-    "prefix": "HLQueryConditionsComponent",
+    "prefix": "HLComponentQueryConditions",
     "body": [
       "<QueryConditions<${1:QueryConditionName}QueryEntity>",
       "    size=\"${2|default,small|}\"",
@@ -160,7 +160,7 @@
   },
 
   "HL Create BaiduMap Component": {
-    "prefix": "HLBaiduMapComponent",
+    "prefix": "HLComponentBaiduMap",
     "body": [
       "<HLBaiduMap",
       "    position={['', '']}",
@@ -174,7 +174,7 @@
   },
 
   "HL Create Print Component": {
-    "prefix": "HLPrintComponent",
+    "prefix": "HLComponentPrint",
     "body": [
       "<HLPrint",
       "    copyStyles={true}",
