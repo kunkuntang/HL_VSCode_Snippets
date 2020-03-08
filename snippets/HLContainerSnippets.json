@@ -83,6 +83,42 @@
     "description": "HL Create Form Config Container"
   },
 
+  "Create HL Form Field Config Container": {
+    "prefix": "HLContainerFormField",
+    "body": [
+			"import { FormRuleProperty, createFormRule } from 'hoolinks/form-rule';",
+			"import { mapFields } from '../../../common/utils/fields';",
+			"import { BaseFormFields, IBaseFormFields } from 'hoolinks-legion-design/lib/models/BaseFormFields';",
+			"",
+			"$BLOCK_COMMENT_START 表单字段类 $BLOCK_COMMENT_END",
+			"export class ${1:FormFieldName}FormFields extends BaseFormFields {",
+			"    ${0}",
+			"    ",
+			"    constructor(form?: ${1}FormFields) {",
+			"        super()",
+			"        mapFields.call(this, form);",
+			"    }",
+			"",
+			"    static getFormFields(form: ${1}FormFields) {",
+			"        let obj = new ${1}FormFields();",
+			"        Object.keys(obj).forEach(item => {",
+			"            obj[item] = form[item];",
+			"        });",
+			"        return obj;",
+			"    }",
+			"}",
+			"",
+			"$BLOCK_COMMENT_START 表单规则类 $BLOCK_COMMENT_END",
+			"export class ${1}FormRule extends ${1}FormFields {",
+			"    constructor(form?: ${1}FormFields) {",
+			"        super(form);",
+			"        createFormRule(${1}FormFields, this);",
+			"    }",
+			"}"
+		],
+    "description": "Create HL Form Field Config Container"
+  },
+
   "HL Create Table Columns Config Container": {
     "prefix": "HLContainerTableColumns",
     "body": [
@@ -96,43 +132,6 @@
       "}"
     ],
     "description": "HL Create Table Columns Config Container"
-  },
-  
-  "Create HL Form Field Config Container": {
-    "prefix": "HLContainerFormField",
-    "body": [
-      "import React from 'react';",
-      "import { IGroup } from 'hoolinks-legion-design/lib/typings/components'",
-      "import { HLFormUtils } from 'hoolinks-legion-design/lib/utils/config-utils';",
-      "import { IAntdProps, IAntdRule } from 'hoolinks-legion-design/lib/typings/antd/index.d';",
-      "import { observablePromise } from 'legions/store-utils'",
-      "",
-      "export default abstract class ${1:FormName}Config<P,S = {}> extends React.Component<P,S>{",
-      "    protected instance: ${1};",
-      "    protected readonly group: IGroup[] = [{",
-      "        name: '',",
-      "        id: 1,",
-      "        active: ${2|true,false|},",
-      "        isFolding: ${3|true,false|},",
-      "        className: '',",
-      "    }]",
-      "    constructor(props: P) {",
-      "        super(props)",
-      "    }",
-      "    protected registerInstance(Instance: ${1}) {",
-      "        this.instance = Instance",
-      "    }",
-      "    protected createConfig() {",
-      "        const formUtils = new HLFormUtils();",
-      "        const rules = ${1}Rule.createFormRules<${1}Rule>(${1}Rule)",
-      "        ",
-      "        return [",
-      "            formUtils.getFormConfig(''),",
-      "        ]",
-      "    }",
-      "}"
-    ],
-    "description": "Create HL Form Field Config Container"
   },
 
   "Create HL QueryConditions Config": {
