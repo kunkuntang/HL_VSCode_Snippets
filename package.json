@@ -2,7 +2,7 @@
   "name": "hlsnippets",
   "displayName": "HLSnippets",
   "description": "code snippets of HL Components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "kuntang",
   "engines": {
     "vscode": "^1.34.0"
