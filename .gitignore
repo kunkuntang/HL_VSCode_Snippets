@@ -1,1 +1,4 @@
 hlsnippets-*
+out
+node_modules
+*.vsix
