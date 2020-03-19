@@ -2,7 +2,7 @@
   "name": "hlsnippets",
   "displayName": "HLSnippets",
   "description": "code snippets of HL Components",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "publisher": "kuntang",
   "engines": {
     "vscode": "^1.34.0"
@@ -11,29 +11,55 @@
     "Snippets"
   ],
   "icon": "images/HLS-icon.png",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:extension.createModel"
+  ],
   "contributes": {
+    "commands": [{
+      "command": "extension.createModel",
+      "title": "Create Data Model"
+    }],
     "snippets": [{
-      "language": "typescriptreact",
-      "path": "./snippets/HLComponentSnippets.json"
-    }, {
-      "language": "typescriptreact",
-      "path": "./snippets/HLContainerSnippets.json"
-    }, {
-      "language": "typescript",
-      "path": "./snippets/HLContainerSnippets.json"
-    }, {
-      "language": "typescriptreact",
-      "path": "./snippets/HLQueryConditionSnippets.json"
-    }, {
-      "language": "typescriptreact",
-      "path": "./snippets/HLFormItemSnippets.json"
-    }, {
-      "language": "typescript",
-      "path": "./snippets/HLFormFieldSnippets.json"
-    }]
+        "language": "typescriptreact",
+        "path": "./snippets/HLComponentSnippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/HLContainerSnippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/HLContainerSnippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/HLQueryConditionSnippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/HLFormItemSnippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/HLFormFieldSnippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "tslint ./src/*.ts",
+    "watch": "tsc -watch -p ./"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/kunkuntang/HL_VSCode_Snippets"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.40",
+    "tslint": "^5.16.0",
+    "typescript": "^3.5.1",
+    "@types/vscode": "^1.34.0"
   }
 }
