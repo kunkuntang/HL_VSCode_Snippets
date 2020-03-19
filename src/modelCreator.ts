@@ -76,9 +76,15 @@ export class ModelCreator {
   private generateConstructor(data: { [key: string]: any }) {
     let tempConArr = [];
     const baseStructureKey = ['msg', 'message', 'ok', 'success', 'status', 'code', 'data']
-    tempConArr.push(
-      `export class ${this.className}CE extends BaseEntity<${this.className}E>{`
-    );
+    if (Array.isArray(data["data"])) {
+      tempConArr.push(
+        `export class ${this.className}CE extends BaseEntity<${this.className}E[]>{`
+      );
+    } else {
+      tempConArr.push(
+        `export class ${this.className}CE extends BaseEntity<${this.className}E>{`
+      );
+    }
     // 创建 额外的响应结构（1）
     tempConArr.push(`    // 额外的响应结构`);
     Object.keys(data).filter(key => baseStructureKey.indexOf(key) === -1).forEach(key => {
@@ -141,7 +147,11 @@ export class ModelCreator {
       );
     }
     tempConArr.push(`        } else {`);
-    tempConArr.push(`            this.result = new ${this.className}E()`);
+    if (Array.isArray(data["data"])) {
+      tempConArr.push(`            this.result = []`);
+    } else {
+      tempConArr.push(`            this.result = new ${this.className}E()`);
+    }
     tempConArr.push(`        }`);
     tempConArr.push(`   }`);
     tempConArr.push(`}`);
