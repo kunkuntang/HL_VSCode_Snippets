@@ -18,7 +18,7 @@
   "contributes": {
     "commands": [{
       "command": "extension.createModel",
-      "title": "Create Data Model"
+      "title": "HL Create Data Model"
     }],
     "snippets": [{
         "language": "typescriptreact",
