@@ -8,11 +8,13 @@ export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     "extension.createModel",
     async function() {
-      let inputClassName = await showInputBox();
+      const selection = vscode.window.activeTextEditor?.selection
+      const selectionText = vscode.window.activeTextEditor?.document.getText(selection)
+      const clipboardText = await vscode.env.clipboard.readText();
+      let inputClassName = await showInputBox(selectionText || '');
       // Get the active text editor
       let editor = vscode.window.activeTextEditor;
-
-      const clipboardText = await vscode.env.clipboard.readText();
+      
       let safeJsonData = {};
       try {
         safeJsonData = JSON.parse(clipboardText);
@@ -50,7 +52,9 @@ export function activate(context: vscode.ExtensionContext) {
 
             // Get the word within the selection
             editor.edit(editBuilder => {
-              editBuilder.insert(selection.active, resultStr);
+              selectionText
+              ? editBuilder.replace(selection, resultStr)
+              : editBuilder.insert(selection.active, resultStr);
             });
           }
         }
