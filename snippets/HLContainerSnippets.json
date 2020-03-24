@@ -51,7 +51,7 @@
       "import { HLFormUtils } from 'hoolinks-legion-design/lib/utils/config-utils';",
       "import { observablePromise } from 'legions/store-utils'",
       "",
-      "export default abstract class ${1:FormName}Config<P,S = {}> extends React.Component<P,S>{",
+      "export default abstract class ${1:FormName}FormConfig<P,S = {}> extends React.Component<P,S>{",
       "    protected instance: ${1};",
       "    protected readonly group: IGroup[] = [{",
       "        name: '',",
@@ -123,7 +123,7 @@
       "import React from 'react';",
       "import { ITableColumnConfigProps } from 'hoolinks-legion-design/lib/typings/antd';",
       "",
-      "export const ${1:TableName}TableColumns = (_this: ${2:PageClass}): ITableColumnConfigProps[] => {",
+      "export const ${1:TableName} = (_this: ${2:PageClass}): ITableColumnConfigProps[] => {",
       "    return [",
       "        ${0}",
       "    ]",
@@ -181,32 +181,6 @@
       "}"
     ],
     "description": "Create HL Store Container"
-  },
-
-  "Create HL Get Service": {
-    "prefix": "HLCreateGetService",
-    "body": [
-      "export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
-      "    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
-      "    return get(`${HttpConfig.gateWay}`, params, options).then(res => {",
-      "        return new ${5:responseEntity}(res);",
-      "    });",
-      "}"
-    ],
-    "description": "Create HL Get Service"
-  },
-
-  "Create HL Post Service": {
-    "prefix": "HLCreatePostService",
-    "body": [
-      "export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
-      "    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
-      "    return post(`${HttpConfig.gateWay}`, params, options).then(res => {",
-      "        return new ${5:responseEntity}(res);",
-      "    });",
-      "}"
-    ],
-    "description": "Create HL Post Service"
   },
 
   "HL Create Table Columns Item": {

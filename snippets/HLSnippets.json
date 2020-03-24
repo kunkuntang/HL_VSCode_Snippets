@@ -1,8 +1,32 @@
 {
+  "Create HL Get Service": {
+    "prefix": "HLCreateGetService",
+    "body": [
+      "export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
+      "    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
+      "    return get(`${HttpConfig.gateWay}`, params, options).then(res => {",
+      "        return new ${5:ContainerEntity}(res);",
+      "    });",
+      "}"
+    ],
+    "description": "Create HL Get Service"
+  },
+  "Create HL Post Service": {
+    "prefix": "HLCreatePostService",
+    "body": [
+      "export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
+      "    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
+      "    return post(`${HttpConfig.gateWay}`, params, options).then(res => {",
+      "        return new ${5:ContainerEntity}(res);",
+      "    });",
+      "}"
+    ],
+    "description": "Create HL Post Service"
+  },
   "HLCreate SubmittingAutoMessage": {
     "prefix": "HLCreateSubmitAutoMsg",
     "body": [
-      "@submittingAutoMessage<${3}>({",
+      "@submittingAutoMessage<${3:PageInstance}>({",
       "  state: '${1:name}',",
       "  store: '${2:store}',",
       "  sideEffect: that => {",

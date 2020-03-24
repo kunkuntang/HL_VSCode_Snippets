@@ -1,6 +1,6 @@
 {
   "HL Create QueryConditions Input Config": {
-    "prefix": "HLCreateQueryConditionsInputConfig",
+    "prefix": "HLCreateQCInputConfig",
     "body": [
       "{",
       "    container: {",
@@ -27,7 +27,7 @@
   },
 
   "HL Create QueryConditions InputNumber Config": {
-    "prefix": "HLCreateQueryConditionsInputNumberConfig",
+    "prefix": "HLCreateQCInputNumberConfig",
     "body": [
       "{",
       "    container: {",
@@ -54,7 +54,7 @@
   },
 
   "HL Create QueryConditions TextArea Config": {
-    "prefix": "HLCreateQueryConditionsTextAreaConfig",
+    "prefix": "HLCreateQCTextAreaConfig",
     "body": [
       "{",
       "    container: {",
@@ -81,7 +81,7 @@
   },
 
   "HL Create QueryConditions Select Config": {
-    "prefix": "HLCreateQueryConditionsSelectConfig",
+    "prefix": "HLCreateQCSelectConfig",
     "body": [
       "{",
       "    container: {",
@@ -109,7 +109,7 @@
   },
 
   "HL Create QueryConditions RadioButton Config": {
-    "prefix": "HLCreateQueryConditionsRadioButtonConfig",
+    "prefix": "HLCreateQCRadioButtonConfig",
     "body": [
       "{",
       "    container: {",
@@ -137,7 +137,7 @@
   },
 
   "HL Create QueryConditions CheckBox Config": {
-    "prefix": "HLCreateQueryConditionsCheckBoxConfig",
+    "prefix": "HLCreateQCCheckBoxConfig",
     "body": [
       "{",
       "    container: {",
@@ -164,7 +164,7 @@
   },
 
   "HL Create QueryConditions Date Config": {
-    "prefix": "HLCreateQueryConditionsDateConfig",
+    "prefix": "HLCreateQCDateConfig",
     "body": [
       "{",
       "    container: {",
@@ -190,7 +190,7 @@
   },
 
   "HL Create QueryConditions DatePicker Config": {
-    "prefix": "HLCreateQueryConditionsDatePickerConfig",
+    "prefix": "HLCreateQCDatePickerConfig",
     "body": [
       "{",
       "    container: {",

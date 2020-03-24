@@ -65,7 +65,7 @@
       "    }}",
       "    uniqueKey=\"id\"",
       "    bodyStyle={{ minHeight: '0' }}",
-      "    scroll={{ x: this.${1}Ref && this.${1}.viewModel.tableXAutoWidth, y: 300 }}",
+      "    scroll={{ x: this.${1}Ref && this.${1}Ref.viewModel.tableXAutoWidth, y: 300 }}",
       "    size=\"${2|small,middle,defalut|}\"",
       "    autoQuery={{",
       "        params: (pageIndex,pageSize) => {",
@@ -92,7 +92,7 @@
       "        },",
       "        model:${6},",
       "    }} ",
-      "    columns={${1}TableColumns(this)}",
+      "    columns={${1}Columns(this)}",
       "></HLTable>"
     ],
     "description": "HL Create Table Component"
@@ -106,11 +106,11 @@
       "        instance.viewModel.isAdaptiveHeight = true;",
       "        instance.viewModel.bodyExternalContainer.set('ButtonAction', { height: 48 })",
       "        instance.viewModel.bodyExternalContainer.set('other', { height: 70 })",
-      "        this.${1:TableRef} = instance;",
+      "        this.${1:Table}Ref = instance;",
       "    }}",
       "    uniqueKey=\"id\"",
       "    bodyStyle={{ minHeight: '0' }}",
-      "    scroll={{ x: this.${1} && this.${1}.viewModel.tableXAutoWidth, y: 300 }}",
+      "    scroll={{ x: this.${1}Ref && this.${1}Ref.viewModel.tableXAutoWidth, y: 300 }}",
       "    size=\"${2|small,middle,defalut|}\"",
       "    type=\"${3|checkbox,radio|}\"",
       "    rowSelectionClickType=\"${4|check,radio|}\"",
@@ -139,9 +139,9 @@
       "        },",
       "        model:${8},",
       "    }} ",
-      "    selectedRowKeys={${1} && ${1}.selectedRows.map((item) => item.id)}",
+      "    selectedRowKeys={${1}Ref && ${1}Ref.selectedRows.map((item) => item.id)}",
       "    onRowChange={(selectedRows) => {}}",
-      "    columns={${1}TableColumns(this)}",
+      "    columns={${1}Columns(this)}",
       "></HLTable>"
     ],
     "description": "HL Create Select Table Component"
@@ -150,7 +150,7 @@
   "HL Create QueryConditions Component": {
     "prefix": "HLComponentQueryConditions",
     "body": [
-      "<QueryConditions<${1:QueryConditionName}QueryEntity>",
+      "<QueryConditions<QCViewModel>",
       "    size=\"${2|default,small|}\"",
       "    defaultToggle={${3|true,false|}}",
       "    query={${1}QueryConfig(this)}",
