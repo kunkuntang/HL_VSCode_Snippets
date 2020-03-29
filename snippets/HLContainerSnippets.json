@@ -1,0 +1,281 @@
+{
+  "HL Create Page Container": {
+		"prefix": "HLContainerPage",
+		"body": [
+			"import React from 'react';",
+			"import { observer, bind } from 'legions/store-react';",
+			"import { ListPageLayout } from 'hoolinks-legion-design';",
+			"import { autorun } from 'mobx';",
+			"",
+			"interface IProps {",
+			"    store?: ${1:PageName}Store;",
+			"}",
+			"",
+			"const initialState = {};",
+			"type IState = Readonly<typeof initialState>;",
+			"",
+			"@bind({ store: ${1:PageName}Store })",
+			"@observer",
+			"export default class ${1:PageName} extends React.Component<IProps, IState> {",
+			"    state = null;",
+			"    constructor(props:IProps) {",
+			"        super(props);",
+			"        this.state = initialState;",
+			"    }",
+			"",
+			"    componentWillMount() {}",
+			"",
+			"    componentDidMount() {}",
+			"",
+			"    componentWillUnmount() {}",
+			"",
+			"    render() {",
+			"        return (",
+			"            <ListPageLayout",
+			"                operation={null}",
+			"                content={(",
+			"                    <div>${0}</div>",
+			"                )}",
+			"            />",
+			"        )",
+			"    }",
+			"}"
+		],
+		"description": "HL Create Page Container"
+  },
+
+  "HL Create Form Config Container": {
+    "prefix": "HLContainerFormConfig",
+    "body": [
+      "import React from 'react';",
+      "import { IGroup } from 'hoolinks-legion-design/lib/typings/components'",
+      "import { HLFormUtils } from 'hoolinks-legion-design/lib/utils/config-utils';",
+      "import { IAntdProps, IAntdRule } from 'hoolinks-legion-design/lib/typings/antd/index.d';",
+      "import { observablePromise } from 'legions/store-utils'",
+      "",
+      "export default abstract class ${1:FormName}Config<P,S = {}> extends React.Component<P,S>{",
+      "    protected instance: ${1};",
+      "    protected readonly group: IGroup[] = [{",
+      "        name: '',",
+      "        id: 1,",
+      "        active: ${2|true,false|},",
+      "        isFolding: ${3|true,false|},",
+      "        className: '',",
+      "    }]",
+      "    constructor(props: P) {",
+      "        super(props)",
+      "    }",
+      "    protected registerInstance(Instance: ${1}) {",
+      "        this.instance = Instance",
+      "    }",
+      "    protected createConfig() {",
+      "        const formUtils = new HLFormUtils();",
+      "        const rules = ${1}Rule.createFormRules<${1}Rule>(${1}Rule)",
+      "        ",
+      "        ${0}",
+      "        ",
+      "        return [",
+      "            formUtils.getFormConfig(''),",
+      "        ]",
+      "    }",
+      "}"
+    ],
+    "description": "HL Create Form Config Container"
+  },
+
+  "Create HL Form Field Config Container": {
+    "prefix": "HLContainerFormField",
+    "body": [
+			"import { FormRuleProperty, createFormRule } from 'hoolinks/form-rule';",
+			"import { mapFields } from '../../../common/utils/fields';",
+			"import { BaseFormFields, IBaseFormFields } from 'hoolinks-legion-design/lib/models/BaseFormFields';",
+			"",
+			"$BLOCK_COMMENT_START 表单字段类 $BLOCK_COMMENT_END",
+			"export class ${1:FormFieldName}FormFields extends BaseFormFields {",
+			"    ${0}",
+			"    ",
+			"    constructor(form?: ${1}FormFields) {",
+			"        super()",
+			"        mapFields.call(this, form);",
+			"    }",
+			"",
+			"    static getFormFields(form: ${1}FormFields) {",
+			"        let obj = new ${1}FormFields();",
+			"        Object.keys(obj).forEach(item => {",
+			"            obj[item] = form[item];",
+			"        });",
+			"        return obj;",
+			"    }",
+			"}",
+			"",
+			"$BLOCK_COMMENT_START 表单规则类 $BLOCK_COMMENT_END",
+			"export class ${1}FormRule extends ${1}FormFields {",
+			"    constructor(form?: ${1}FormFields) {",
+			"        super(form);",
+			"        createFormRule(${1}FormFields, this);",
+			"    }",
+			"}"
+		],
+    "description": "Create HL Form Field Config Container"
+  },
+
+  "HL Create Table Columns Config Container": {
+    "prefix": "HLContainerTableColumns",
+    "body": [
+      "import React from 'react';",
+      "import { ITableColumnConfigProps } from 'hoolinks-legion-design/lib/typings/antd';",
+      "",
+      "export const ${1:TableName}TableColumns = (_this: ${2:PageClass}): ITableColumnConfigProps[] => {",
+      "    return [",
+      "        ${0}",
+      "    ]",
+      "}"
+    ],
+    "description": "HL Create Table Columns Config Container"
+  },
+
+  "Create HL QueryConditions Config": {
+    "prefix": "HLContainerQueryConditionsConfig",
+    "body": [
+      "import { IQuery } from 'hoolinks-legion-design/lib/typings/components';",
+      "",
+      "export const ${1:QueryConditionName}QueryConfig = (_this: ${2:PageClass}): Array<IQuery> => {",
+      "    return [",
+      "        {",
+      "            container: {",
+      "                width: 200,",
+      "                position: 'left',",
+      "                component: {",
+      "                    label: '订单号',",
+      "                    props: { width: 180, placeholder: '' },",
+      "                    type: 'text',",
+      "                    JsonProperty: { queryPrams: 'orderNo' },",
+      "                    defaultValue: '',",
+      "                },",
+      "            },",
+      "        },",
+      "        {",
+      "            container: {",
+      "                position: 'right',",
+      "                component: {",
+      "                    hooks: [",
+      "                        {",
+      "                            name: 'onSearch',",
+      "                            handle: (value, viewModel) => {},",
+      "                        },",
+      "                        {",
+      "                            name: 'onReset',",
+      "                            handle: (value, viewModel) => {},",
+      "                        },",
+      "                    ],",
+      "                },",
+      "            },",
+      "        },",
+      "    ];",
+      "}"
+    ],
+    "description": "HL Create QueryConditions Config"
+  },
+
+  "Create HL Store Container": {
+		"prefix": "HLContainerStore",
+		"body": [
+			"import StoreBase, { IStoreBaseMeta } from '../../common/stores/StoreBase';",
+			"import { observable, action, computed } from 'mobx';",
+			"import { observablePromise } from 'brain-store-utils';",
+			"",
+			"export default class ${1:StoreName} extends StoreBase {",
+			"    static meta: IStoreBaseMeta = {",
+			"        ...StoreBase.meta,",
+			"        className: '${1}',",
+			"        contextTypes: {},",
+			"    };",
+			"    ",
+			"    ${0}",
+			"}"
+		],
+		"description": "Create HL Store Container"
+  },
+  
+	"Create HL Get Service": {
+		"prefix": "HLCreateGetService",
+		"body": [
+			"export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
+			"    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
+			"    return get(`${HttpConfig.gateWay}`, params, options).then(res => {",
+			"        return new ${5:responseEntity}(res);",
+			"    });",
+			"}"
+		],
+		"description": "Create HL Get Service"
+	},
+	
+	"Create HL Post Service": {
+		"prefix": "HLCreatePostService",
+		"body": [
+			"export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
+			"    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
+			"    return post(`${HttpConfig.gateWay}`, params, options).then(res => {",
+			"        return new ${5:responseEntity}(res);",
+			"    });",
+			"}"
+		],
+		"description": "Create HL Post Service"
+  },
+  
+  "HL Create Table Columns Item": {
+    "prefix": "HLCreateTableColumnsItem",
+    "body": [
+      "{",
+      "    title: '${1:title}',",
+      "    width: 120,",
+      "    tooltip: ${2|true,false|},",
+      "    dataIndex: '${3:dataIndex}',",
+      "},"
+    ],
+    "description": "HL Create Table Columns Item"
+  },
+
+	"Create HL FormField Rule": {
+		"prefix": "HLCreateFormFieldRule",
+		"body": [
+			"$BLOCK_COMMENT_START 表单规则类 $BLOCK_COMMENT_END",
+			"export class ${1}FormRules extends ${1}FormFields {",
+			"    constructor(form?: ${1}FormFields) {",
+			"        super(form);",
+			"        createFormRule(${1}FormFields, this);",
+			"    }",
+			"}"
+		],
+		"description": "Create HL FormField Rule"
+	},
+
+	"Create HL FormField Extend Rule": {
+		"prefix": "HLCreateFormFieldExtendRule",
+		"body": [
+			"$BLOCK_COMMENT_START 表单拓展规则类 $BLOCK_COMMENT_END",
+			"class ${1:FormFieldName}FormExtendsRules extends ${1}FormFields {",
+			"    /** 表单拓展规则 */",
+			"    @FormRuleProperty({",
+			"        required: true,",
+			"        name: 'companyName1',",
+			"        error: '',",
+			"        desc: '表单拓展规则',",
+			"        type: 'string',",
+			"    })",
+			"    companyName1: IBaseFormFields<string> = {",
+			"        value: '',",
+			"    };",
+			"}",
+			"",
+			"$BLOCK_COMMENT_START 表单规则类 $BLOCK_COMMENT_END",
+			"export class ${1}FormRule extends ${1}FormFields {",
+			"    constructor(form?: ${1}FormFields) {",
+			"        super(form);",
+			"        createFormRule(${1}FormFields, this, ${1}FormExtendsRules);",
+			"    }",
+			"}"
+		],
+		"description": "Create HL FormField Extend Rule"
+  }
+}

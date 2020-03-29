@@ -1,65 +1,136 @@
-# hlsinppts README
+# HLSnippets
 
-This is the README for your extension "hlsinppts". After writing up a brief description, we recommend including the following sections.
+<p align="center">
+  <img width="300" src="https://raw.githubusercontent.com/kunkuntang/HL_VSCode_Snippets/develop/images/HLS-icon.png" />
+</p>
+
+Using this extensions, you can generate all kinds of template code. Hope you like it!
+
+[English Document](https://github.com/kunkuntang/HL_VSCode_Snippets/blob/master/README.md) | [中文文档](https://github.com/kunkuntang/HL_VSCode_Snippets/blob/master/README_CN.md)
+
+## Installation
+Install through VS Code extensions. Search for HLSnippets
+
+[Visual Studio Code Market Place: HLSnippets](https://marketplace.visualstudio.com/items?itemName=kuntang.hlsnippets)
+
+## Usage
+
+These extends includes three types of snippets:
+
+- Container Snippets, create page template code in blank file.
+- Component Snippets, create component template code in a page.
+- Creator(Create) Snippets, create some special template code in all kinds of file, like store, service, etc.
+
+According these snippets categories, `HLSnippets` defined the snippet instruction with `prefix` + `scope` + `type`.
+
+### Simple Example
+
+When I want to write a new page, I will create jsx file in the workspace and open the file. Then write `HLContainerPage` and tab the tips, so the page template code will show on the file.
+
+<p align="center">
+  <img width="1440" src="https://raw.githubusercontent.com/kunkuntang/HL_VSCode_Snippets/develop/images/HLSinppets-intro.gif" />
+</p>
+
+Let's learn the instruction rule by this example, as we just done before, we create a file and tag a instruction named `HLContainerPage`. The `Prefix` of this instruction here is `HL`, and all the `Prefix` call `HL` permanent. And go on we see the `Scope` called `Container`, byt the way, other two `Scopes` is `Component` and `Create`. Final part of the instruction is `Type`, which the specific function you want to do. The `type` of `HLContainerPage` is `Page` means you will generate the page template code in the file.
+
+### All Snippets List
+
+The table below list all the snippets and instruction.
+
+#### Container Snippets:
+
+Snippets Name | Instruction
+---|---
+HLContainerPage | generate **page** template code
+HLContainerFormConfig | generate **form** config template code
+HLContainerTableColumns | generate **table** Columns template code
+HLContainerFormField | generate **formField** template code
+HLContainerQueryConditionsConfig | generate **QueryCondition** config template code
+HLContainerStore | generate **observable store** template code
+
+#### Component Snippets
+
+Snippets Name | Instruction
+---|---
+HLComponentForm | generate **form** template code
+HLComponentModal | generate **modal** template code
+HLComponentQRCoe | generate **QRCode** template code
+HLComponentTable | generate **table** template code
+HLComponentSelectTable | generate **selectable** template code
+HLComponentQueryConditions | generate **QueryConditions** template code
+HLComponentBaiduMap | generate **BaiduMap** template code
+HLComponentPrint | generate **Print** template code
+
+#### Creator Snippets
+
+Service Creator Snippets:
+
+Snippets Name | Instruction
+---|---
+HLCreateGetService | generate **get service** template code
+HLCreatePostService | generate **post service** template code
+
+Table Creator Snippets:
+
+Snippets Name | Instruction
+---|---
+HLCreateTableColumnsItem | generate **table columns item** template code
+
+Form Field Creator Snippets:
+
+Snippets Name | Instruction
+---|---
+HLCreateFormFieldRule | generate **form field rule** template code
+HLCreateFormFieldExtendRule | generate **form field extend rule** template code
+HLCreateTextFormField | generate **text form field** template code
+HLCreateInputFormField | generate **input form field** template code
+HLCreateSwitchFormField | generate **switch form field** template code
+HLCreateNumberInputFormField | generate **numberInput form field** template code
+HLCreateMultipleSelectFormField | generate **multipleSelect form field** template code
+HLCreateSelectPageFormField | generate **selectPage form field** template code
+HLCreateDatePickerFormField | generate **datePicker form field** template code
+HLCreateUploadFormField | generate **uploadForm form field** template code
+HLCreateHiddenFormField | generate **hidden form field** template code
+HLCreateExtraFormField | generate **extra form field** template code
+HLCreateCustomFormField | generate **custom form field** template code
+
+> **Hidden Form Field:** means the formField that don't show in the UI but needed to send to the backend interface.
+
+> **Extra Form Field:** means the formField that show in the UI but not necessary to send the backend interface.
+
+> **Custom Form Field:** means maximum custom property show in the template code, like `regex`, `validator`, etc.
+
+Form Item Creator Snippets:
+
+Snippets Name | Instruction
+---|---
+HLCreateInputFormItem | generate **text form item** template code
+HLCreateNumberInputFormItem | generate **numberInput form item** template code
+HLCreateTextAreaFormItem | generate **textarea form item** template code
+HLCreateRadioButtonFormItem | generate **radio button form item** template code
+HLCreateSwitchFormItem | generate **switch form item** template code
+HLCreateDatePickerFormItem | generate **datePicker form item** template code
+HLCreateSelectFormItem | generate **select form item** template code
+HLCreateSearchSelectFormItem | generate **searchSelect form item** template code
+HLCreateUploadFormItem | generate **upload form item** template code
+HLCreateCustomFormItem | generate **custom form item** template code
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Add code snippets.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Visual Studio Code version is above `^1.34.0`.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+This is the first publishing of HLSnippets.
 
-### 1.0.0
+### 0.0.1
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Add code snippets.
 
 -----------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
