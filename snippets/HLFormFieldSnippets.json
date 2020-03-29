@@ -8,7 +8,7 @@
     ],
     "description": "Create HL Text FormField"
 	},
-	
+
 	"Create HL Input FormField": {
 		"prefix": "HLCreateInputFormField",
 		"body": [
@@ -208,6 +208,10 @@
 			"${2}:IBaseFormFields<${5}> = {",
 			"    value: '',",
 			"    requestParamKey: '',",
+			"    beforeDataToFormFields:<${6:T}> (value, resData: ${6}) => {",
+			"        $BLOCK_COMMENT_START 接口数据转换成表单数据前作的预处理 $BLOCK_COMMENT_END",
+			"        return value",
+			"    },",
 			"    submitBeforeTransform: (value) => {",
 			"        $BLOCK_COMMENT_START 提交前作的数据预处理 $BLOCK_COMMENT_END",
 			"        return value",

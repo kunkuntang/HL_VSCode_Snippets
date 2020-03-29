@@ -49,10 +49,9 @@
       "import React from 'react';",
       "import { IGroup } from 'hoolinks-legion-design/lib/typings/components'",
       "import { HLFormUtils } from 'hoolinks-legion-design/lib/utils/config-utils';",
-      "import { IAntdProps, IAntdRule } from 'hoolinks-legion-design/lib/typings/antd/index.d';",
       "import { observablePromise } from 'legions/store-utils'",
       "",
-      "export default abstract class ${1:FormName}Config<P,S = {}> extends React.Component<P,S>{",
+      "export default abstract class ${1:FormName}FormConfig<P,S = {}> extends React.Component<P,S>{",
       "    protected instance: ${1};",
       "    protected readonly group: IGroup[] = [{",
       "        name: '',",
@@ -69,7 +68,7 @@
       "    }",
       "    protected createConfig() {",
       "        const formUtils = new HLFormUtils();",
-      "        const rules = ${1}Rule.createFormRules<${1}Rule>(${1}Rule)",
+      "        const rules = ${1}FormRule.createFormRules<${1}FormRule>(${1}FormRule)",
       "        ",
       "        ${0}",
       "        ",
@@ -124,7 +123,7 @@
       "import React from 'react';",
       "import { ITableColumnConfigProps } from 'hoolinks-legion-design/lib/typings/antd';",
       "",
-      "export const ${1:TableName}TableColumns = (_this: ${2:PageClass}): ITableColumnConfigProps[] => {",
+      "export const ${1:TableName} = (_this: ${2:PageClass}): ITableColumnConfigProps[] => {",
       "    return [",
       "        ${0}",
       "    ]",
@@ -138,21 +137,9 @@
     "body": [
       "import { IQuery } from 'hoolinks-legion-design/lib/typings/components';",
       "",
-      "export const ${1:QueryConditionName}QueryConfig = (_this: ${2:PageClass}): Array<IQuery> => {",
+      "export const ${1:QueryConditionName} = (_this: ${2:PageClass}): Array<IQuery> => {",
       "    return [",
-      "        {",
-      "            container: {",
-      "                width: 200,",
-      "                position: 'left',",
-      "                component: {",
-      "                    label: '订单号',",
-      "                    props: { width: 180, placeholder: '' },",
-      "                    type: 'text',",
-      "                    JsonProperty: { queryPrams: 'orderNo' },",
-      "                    defaultValue: '',",
-      "                },",
-      "            },",
-      "        },",
+      "    ${0}",
       "        {",
       "            container: {",
       "                position: 'right',",
@@ -194,32 +181,6 @@
       "}"
     ],
     "description": "Create HL Store Container"
-  },
-
-  "Create HL Get Service": {
-    "prefix": "HLCreateGetService",
-    "body": [
-      "export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
-      "    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
-      "    return get(`${HttpConfig.gateWay}`, params, options).then(res => {",
-      "        return new ${5:responseEntity}(res);",
-      "    });",
-      "}"
-    ],
-    "description": "Create HL Get Service"
-  },
-
-  "Create HL Post Service": {
-    "prefix": "HLCreatePostService",
-    "body": [
-      "export function ${1:InterfaceName}Service(params: ${2:ParamsEntity}) {",
-      "    let options = setHeaders(`${HttpConfig.${3:domain}}${4:url}`);",
-      "    return post(`${HttpConfig.gateWay}`, params, options).then(res => {",
-      "        return new ${5:responseEntity}(res);",
-      "    });",
-      "}"
-    ],
-    "description": "Create HL Post Service"
   },
 
   "HL Create Table Columns Item": {

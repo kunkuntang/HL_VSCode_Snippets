@@ -104,9 +104,9 @@ export class ModelCreator {
     tempConArr.push(
       `    constructor(fromJson: I${this.className}BaseEntity<${this.className}E>){`
     );
-    tempConArr.push(`        super();`);
+    tempConArr.push(`        super(fromJson);`);
     tempConArr.push('');
-    
+
     // 创建 基本响应结构 msg,code,status
     tempConArr.push(`        // 基本响应结构`);
     Object.keys(data).forEach(key => {

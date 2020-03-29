@@ -2,9 +2,9 @@
 
 import { window } from 'vscode';
 
-export async function showInputBox() {
+export async function showInputBox(selectionText: string) {
 	const result = await window.showInputBox({
-		value: '',
+		value: selectionText ? selectionText : '',
 		// valueSelection: [2, 4],
 		placeHolder: '输入mode名称，不包含Entity、EntityContainer的字符',
 		// validateInput: text => {

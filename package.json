@@ -2,7 +2,7 @@
   "name": "hlsnippets",
   "displayName": "HLSnippets",
   "description": "code snippets of HL Components",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "publisher": "kuntang",
   "engines": {
     "vscode": "^1.34.0"
@@ -18,7 +18,7 @@
   "contributes": {
     "commands": [{
       "command": "extension.createModel",
-      "title": "Create Data Model"
+      "title": "HL Create Data Model"
     }],
     "snippets": [{
         "language": "typescriptreact",
@@ -43,6 +43,14 @@
       {
         "language": "typescript",
         "path": "./snippets/HLFormFieldSnippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/HLSnippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/HLSnippets.json"
       }
     ]
   },

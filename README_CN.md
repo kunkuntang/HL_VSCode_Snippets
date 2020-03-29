@@ -8,6 +8,16 @@
 
 [English Document](https://github.com/kunkuntang/HL_VSCode_Snippets/blob/master/README.md) | [中文文档](https://github.com/kunkuntang/HL_VSCode_Snippets/blob/master/README_CN.md)
 
+## 新特性
+
+- 支持根据接口返回的参数创建Model代码
+- 修复`HLComponentTable`代码片段的占位符
+- 添加HLQueryCondition代码片段
+- 添加checkbox group 和 radio group 类型的formItem
+- 添加 submitAutoMessage 代码片段
+
+Add code snippets.
+
 ## 安装方法
 
 通过在VSCode插件市场搜索`HLSnippets`来安装此扩展。
@@ -108,20 +118,41 @@ HLCreateCustomFormField | 生成 **自定义表单域** 的模板代码
 
 指令名称 | 说明
 ---|---
-HLCreateInputFormItem | 生成 **文本表单项** 的模板代码
-HLCreateNumberInputFormItem | 生成 **数字文本表单项** 的模板代码
-HLCreateTextAreaFormItem | 生成 **多行文本表单项** 的模板代码
-HLCreateRadioButtonFormItem | 生成 **Radio按钮表单项** 的模板代码
-HLCreateSwitchFormItem | 生成 **Switch表单项** 的模板代码
-HLCreateDatePickerFormItem | 生成 **日期选择表单项** 的模板代码
-HLCreateSelectFormItem | 生成 **选择表单项** 的模板代码
-HLCreateSearchSelectFormItem | 生成 **远程搜索选择表单项** 的模板代码
-HLCreateUploadFormItem | 生成 **文件上传表单项** 的模板代码
-HLCreateCustomFormItem | 生成 **自定义表单项** 的模板代码
+HLCreateInputFormItem | 生成 **文本 表单项** 的模板代码
+HLCreateNumberInputFormItem | 生成 **数字文本 表单项** 的模板代码
+HLCreateTextAreaFormItem | 生成 **多行文本 表单项** 的模板代码
+HLCreateRadioButtonFormItem | 生成 **Radio按钮 表单项** 的模板代码
+HLCreateSwitchFormItem | 生成 **Switch 表单项** 的模板代码
+HLCreateDatePickerFormItem | 生成 **日期选择 表单项** 的模板代码
+HLCreateSelectFormItem | 生成 **选择 表单项** 的模板代码
+HLCreateSearchSelectFormItem | 生成 **远程搜索选择 表单项** 的模板代码
+HLCreateUploadFormItem | 生成 **文件上传 表单项** 的模板代码
+HLCreateCustomFormItem | 生成 **自定义 表单项** 的模板代码
 
-## Features
+QueryCondition项类型的生成指令：
 
-Add code snippets.
+指令名称 | 说明
+---|---
+HLCreateQCInputConfig | 生成 **文本 查询项** 的模板代码
+HLCreateQCInputNumberConfig | 生成 **数字文本 查询项** 的模板代码
+HLCreateQCTextAreaConfig | 生成 **多行文本 查询项** 的模板代码
+HLCreateQCSelectConfig | 生成 **下拉选择 查询项** 的模板代码
+HLCreateQCRadioButtonConfig | 生成 **单选组 查询项** 的模板代码
+HLCreateQCCheckBoxConfig | 生成 **多选组 查询项** 的模板代码
+HLCreateQCDateConfig | 生成 **日期 查询项** 的模板代码
+HLCreateQCDatePickerConfig | 生成 **日期范围选择 查询项** 的模板代码
+
+## 生成 Model代码
+
+<p align="center">
+  <img width="1440" src="https://raw.githubusercontent.com/kunkuntang/HL_VSCode_Snippets/master/images/create-model.gif" />
+</p>
+
+首先复制后端接口返回的 `JSON` 数据，然后按 F1 或者 Ctrl + Shift + p 调出 VsCode 命令菜单，然后输入 `HL Create Model` 指令，提示输入生成的model实体名称（默认是选中的文本），输入名称后便会自动生成 model 的代码。
+
+> 说如果名称太长或者需要从别人地方复制过来，可以先复制粘贴到model文件中，然后选中名称再执行命令。
+
+> 复制后端接口返回的数据可以使用 [`REST Client`](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) 这个插件。
 
 ## Requirements
 

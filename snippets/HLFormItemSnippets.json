@@ -69,6 +69,80 @@
     "description": "Create HL Radio Button FormItem"
   },
 
+  "Create HL Radio Group FormItem": {
+    "prefix": "HLCreateRadioGroupFormItem",
+    "body": [
+      "formUtils.renderCustomConfig({",
+      "    iAntdProps: formUtils.createAntdProps('${1:name}', 1, ''),",
+      "    iFormProps: {",
+      "        render: (form, antdProps, rule, formRef) => {",
+      "            return (",
+      "                <HLFormItem",
+      "                    form={form}",
+      "                    itemName=\"${1}\"",
+      "                    rules={rules.${1}}",
+      "                    label={'${2:labelName}'}",
+      "                    labelCol={{ span: 8 }}",
+      "                    wrapperCol={{ span: 16 }}",
+      "                    className=\"form-item-default\">",
+      "                    <RadioGroup",
+      "                        options={[",
+      "                            {",
+      "                                label: '全部',",
+      "                                value: '',",
+      "                                disabled: false,",
+      "                            },",
+      "                        ]}",
+      "                        value={formRef.viewModel.InputDataModel['${1}']['value']}",
+      "                        onChange={value => {",
+      "                            formRef.store.updateFormInputData( formRef.uid, { ${1}: { value } }, this);",
+      "                        }}",
+      "                    />",
+      "                </HLFormItem>",
+      "            );",
+      "        },",
+      "    },",
+      "});"
+    ],
+    "description": "Create HL Radio Group FormItem"
+  },
+
+  "Create HL Checkbox Group FormItem": {
+    "prefix": "HLCreateCheckboxGroupFormItem",
+    "body": [
+      "formUtil.renderCustomConfig({",
+      "    iAntdProps: {",
+      "        ...formUtil.createAntdProps('${1:name}', 4),",
+      "        span: 24,",
+      "    },",
+      "    iFormProps: {",
+      "        render: (form, iAntdProps, rule, formRef) => {",
+      "            return (",
+      "                <HLFormItem",
+      "                    form={form}",
+      "                    itemName=\"${1}\"",
+      "                    rules={rules.${1}}",
+      "                    label={'${2:labelName}'}",
+      "                    {...deliveryWaryColConfig}",
+      "                    className=\"form-item-default\">",
+      "                    <CheckboxGroup",
+      "                        options={[",
+      "                            { value: '', label: '全部' },",
+      "                        ]}",
+      "                        value={formRef.viewModel.InputDataModel['${1}']['value']}",
+      "                        onChange={e => {",
+      "                            formRef.store.updateFormInputData( formRef.uid, { ${1}: { value: e } }, this);",
+      "                        }}",
+      "                    />",
+      "                </HLFormItem>",
+      "            );",
+      "        },",
+      "    },",
+      "});"
+    ],
+    "description": "Create HL Checkbox Group FormItem"
+  },
+
   "Create HL Switch FormItem": {
     "prefix": "HLCreateSwitchFormItem",
     "body": [
@@ -115,7 +189,7 @@
       "            key: '',",
       "          }",
       "        ],",
-      "        mode: 'multiple',",
+      "        mode: 'combobox',",
       "    },",
       "    rules: ${5:rules}.${2},",
       "})"
@@ -177,6 +251,10 @@
       "    iAntdProps: ${1}.createAntdProps('${2:name}', ${3|1,2,3,4|}, '请输入${4}'),",
       "    iFormProps: {",
       "        ...${1}.createLayout('${4:label}', 8, 2 * 8),",
+      "        action: `${5}`,",
+      "        headers: {${6}},",
+      "        name: '${7}',",
+      "        data: {${8}},",
       "        maxFileCount: ${5:1},",
       "        isDragger: ${6|true,false|},",
       "        prompt: '',",
@@ -209,5 +287,5 @@
     ],
     "description": "Create HL Custom FormItem"
   }
-  
+
 }

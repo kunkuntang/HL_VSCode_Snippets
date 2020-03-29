@@ -8,6 +8,15 @@ Using this extensions, you can generate all kinds of template code. Hope you lik
 
 [English Document](https://github.com/kunkuntang/HL_VSCode_Snippets/blob/master/README.md) | [中文文档](https://github.com/kunkuntang/HL_VSCode_Snippets/blob/master/README_CN.md)
 
+## Features
+
+- support create data model from service interface;
+- fix HLComponentTable Snippets placeholder;
+- add QueryCondition snippet;
+- move the other snippet from HLContainerSnippets.json to HLSnippets.json
+- add checkbox group formItem and radio group formItem
+- add submitAutoMessage snippet
+
 ## Installation
 Install through VS Code extensions. Search for HLSnippets
 
@@ -115,9 +124,30 @@ HLCreateSearchSelectFormItem | generate **searchSelect form item** template code
 HLCreateUploadFormItem | generate **upload form item** template code
 HLCreateCustomFormItem | generate **custom form item** template code
 
-## Features
+QueryCondition Creator Snippet
 
-Add code snippets.
+Snippets Name | Instruction
+---|---
+HLCreateQCInputConfig | generate **input queryCondition item** template code
+HLCreateQCInputNumberConfig | generate **input number queryCondition item** template code
+HLCreateQCTextAreaConfig | generate **textArea queryCondition item** template code
+HLCreateQCSelectConfig | generate **select queryCondition item** template code
+HLCreateQCRadioButtonConfig | generate **radio button queryCondition item** template code
+HLCreateQCCheckBoxConfig | generate **checkBox queryCondition item** template code
+HLCreateQCDateConfig | generate **date queryCondition item** template code
+HLCreateQCDatePickerConfig | generate **date picker queryCondition item** template code
+
+## Generate Model Code
+
+<p align="center">
+  <img width="1440" src="https://raw.githubusercontent.com/kunkuntang/HL_VSCode_Snippets/master/images/create-model.gif" />
+</p>
+
+First copy the JSON data from the service interface, and press F1 or Ctrl + Shift + P trigger the command panel of VsCode, then enter the `HL Create Model` instruction and input the model name(default use the text of the current selection in the active editor of VsCode), finally you will see the code generated at the file.
+
+> if the model name is hard to text you can copy that model name and paste in the file, then select the name and continue trigger the `HL Create Model` instruction.
+
+> You can use the `REST Client` VsCode plugin help you to get the response JSON string from the backend interface.
 
 ## Requirements
 
